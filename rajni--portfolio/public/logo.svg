@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0% { stroke-width: 2; }
+      50% { stroke-width: 3; }
+      100% { stroke-width: 2; }
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+    .outer-circle {
+      stroke: #3B82F6;
+      stroke-width: 2;
+      animation: pulse 2s infinite;
+    }
+    .inner-circle {
+      animation: rotate 8s linear infinite;
+    }
+    .text-path {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: dash 1.5s ease forwards;
+    }
+  </style>
+  
+  <!-- Outer circle with pulse animation -->
+  <circle class="outer-circle" cx="20" cy="20" r="19"/>
+  
+  <!-- Inner rotating design -->
+  <g class="inner-circle">
+    <circle cx="20" cy="20" r="15" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4 4"/>
+  </g>
+  
+  <!-- Stylized 'R' with dash animation -->
+  <path class="text-path" 
+        d="M15 12V28M15 12H25C27.2091 12 29 13.7909 29 16C29 18.2091 27.2091 20 25 20H15M25 20L29 28" 
+        stroke="#3B82F6" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="20" cy="20" r="3" fill="#3B82F6">
+    <animate attributeName="r" values="3;3.5;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg> 
